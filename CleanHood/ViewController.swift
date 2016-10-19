@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    var post = [Post]()
+    var posts = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +26,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 1
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let post = posts[indexPath.row]
+        if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
+            cell.configureCell(post)
+            return cell
+        } else {
+            let cell = PostCell()
+            cell.configureCell(post)
+            return cell
+        }
         
     }
+    
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
@@ -37,9 +49,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return post.count
+        return posts.count
     }
-    
-    
 }
-

@@ -48,15 +48,15 @@
                                     <constraint firstAttribute="height" constant="54" id="zBl-SI-ut8"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ucb-dY-UpU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ucb-dY-UpU">
                                 <rect key="frame" x="0.0" y="55" width="375" height="612"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="NUi-dz-7fp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="67" id="NUi-dz-7fp" customClass="PostCell" customModule="CleanHood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NUi-dz-7fp" id="z7O-J3-Lgt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="barrel-water-bridge.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OBo-W3-wTm">
@@ -106,6 +106,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.80687537260775377" green="0.92189503205128209" blue="0.78334763521540218" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="descLbl" destination="rta-6L-B8P" id="iGg-Rr-S4l"/>
+                                            <outlet property="postImg" destination="OBo-W3-wTm" id="gl7-EV-q9x"/>
+                                            <outlet property="title" destination="bXu-2i-ZzX" id="EYb-pb-06i"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
